@@ -9,3 +9,29 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId Int @unique
+  name String
+  email String @unique
+  password String
+  role String
+}
+
+model Drug {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String @db.ObjectId
+  price Float
+  quantity Int
+
+  user DrugStore @relation(fields: [name], references: [id], onDelete: Cascade)
+}
+
+model DrugStore {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  drugStoreId String @db.ObjectId
+  location String
+  contract String
+  drugs Drug[]
+}
