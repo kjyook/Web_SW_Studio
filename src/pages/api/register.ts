@@ -8,7 +8,7 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     try{
-        const { email, name, password } = req.body;
+        const { email, name, password, userId, role } = req.body;
 
         const existingUser = await prismadb.user.findUnique({
             where: {
@@ -20,15 +20,13 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             return res.status(422).json({ error: 'Email taken' })
         }
 
-        const hashedPassword = await bcrypt.hash(password, 12);
-
         const user = await prismadb.user.create({
             data: {
                 email,
                 name,
-                hashedPassword,
-                image: '',
-                emailVerified: new Date(),
+                password,
+                userId,
+                role,
             }
         });
 
