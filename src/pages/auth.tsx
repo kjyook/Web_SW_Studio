@@ -44,6 +44,12 @@ const Auth = () => {
         }
     }, [email, name, password, role]);
 
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            variant === 'login' ? login() : register();
+        }
+    };
+
     return (
         <>
         <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -58,11 +64,13 @@ const Auth = () => {
                         </h2>
                         <div className="flex flex-col gap-4">
                             {variant === 'signup' && (
-                                <Input id="username" description="이름" secret="text" value={name} onChange={(ev) => setName(ev.target.value)} />
+                                <Input id="username" description="이름" secret="text" value={name} onChange={(ev) => setName(ev.target.value)} onKeyPress={handleKeyPress} />
                             )}
-                            <Input id="email" description="이메일 주소 또는 전화번호" secret="email" value={email} onChange={(ev) => setEmail(ev.target.value)} />
-                            <Input id="password" description="비밀번호" secret="password" value={password} onChange={(ev) => setPassword(ev.target.value)}/>
-                            <Input id="role" description="손님 or 약사" secret="email" value={role} onChange={(ev) => setRole(ev.target.value)} />
+                            {variant === 'signup' && (
+                                <Input id="role" description="손님 or 약사" secret="email" value={role} onChange={(ev) => setRole(ev.target.value)} onKeyPress={handleKeyPress} />
+                            )}
+                            <Input id="email" description="이메일 주소 또는 전화번호" secret="email" value={email} onChange={(ev) => setEmail(ev.target.value)} onKeyPress={handleKeyPress} />
+                            <Input id="password" description="비밀번호" secret="password" value={password} onChange={(ev) => setPassword(ev.target.value)} onKeyPress={handleKeyPress}/>
                         </div>
                         <button onClick={variant === 'login' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10">
                             {variant === 'login' ? '로그인' : '회원가입'}
