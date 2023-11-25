@@ -11,9 +11,8 @@ const Auth = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const [userId, setUserId] = useState('');
     const [role, setRole] = useState('');
-    
+
     const toggleVariant = useCallback(() => {
         setVariant((prev) => prev === 'login' ? 'signup' : 'login');
     }, []);
@@ -32,17 +31,18 @@ const Auth = () => {
 
     const register = useCallback(async () => {
         try {
+            console.log(email, name, password, role)
             await axios.post('/api/register', {
                 email,
                 name,
                 password,
-                userId,
-                role
+                role,
+                emailVerified: new Date(),
             })
         } catch (error) {
             console.log(error);
         }
-    }, [email, name, password, userId, role]);
+    }, [email, name, password, role]);
 
     return (
         <>
@@ -62,6 +62,7 @@ const Auth = () => {
                             )}
                             <Input id="email" description="이메일 주소 또는 전화번호" secret="email" value={email} onChange={(ev) => setEmail(ev.target.value)} />
                             <Input id="password" description="비밀번호" secret="password" value={password} onChange={(ev) => setPassword(ev.target.value)}/>
+                            <Input id="role" description="손님 or 약사" secret="email" value={role} onChange={(ev) => setRole(ev.target.value)} />
                         </div>
                         <button onClick={variant === 'login' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10">
                             {variant === 'login' ? '로그인' : '회원가입'}

@@ -27,12 +27,12 @@ export default NextAuth({
                         email: credentials.email
                     }
                 });
-                if (!user || !user.hashedPassword) {
+                if (!user || !user.password) {
                     throw new Error('Email does not exist');
                 }
                 const isCorrectPassword = await compare(
                     credentials.password, 
-                    user.hashedPassword
+                    user.password
                 );
                 if (!isCorrectPassword){
                     throw new Error('Incorrect password');
