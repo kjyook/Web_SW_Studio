@@ -20,12 +20,13 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
             return res.status(422).json({ error: 'Email taken' })
         }
 
+        const hashedPassword = bcrypt.hashSync(password, 10);
+
         const user = await prismadb.user.create({
             data: {
                 email,
                 name,
-                password,
-                userId,
+                hashedPassword,
                 role,
             },
         });

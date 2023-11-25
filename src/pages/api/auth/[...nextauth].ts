@@ -7,7 +7,7 @@ export default NextAuth({
     providers:[
         Credentials({
             id: 'credentials',
-            name: 'Credentials',
+            name: 'credentials',
             credentials: {
                 email: {
                     label: "Email",
@@ -27,13 +27,14 @@ export default NextAuth({
                         email: credentials.email
                     }
                 });
-                if (!user || !user.password) {
+                if (!user || !user.hashedPassword) {
                     throw new Error('Email does not exist');
                 }
                 const isCorrectPassword = await compare(
                     credentials.password, 
-                    user.password
+                    user.hashedPassword
                 );
+
                 if (!isCorrectPassword){
                     throw new Error('Incorrect password');
                 }
