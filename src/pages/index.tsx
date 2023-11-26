@@ -8,7 +8,7 @@ const IndexPage = () => {
 
   return (
     <div>
-      <Tabs defaultTab="page1" tabs={tabs} />
+      <Tabs defaultTab="Main" tabs={tabs} />
     </div>
   );
 };
