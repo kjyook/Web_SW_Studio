@@ -2,13 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import logoImage from '../../public/logo.jpg';
 import MyCarousel from './components/MyCarousel';
-import Carousel from 'react-bootstrap/Carousel';
 
 const DrugStore = () => {
   const images = [
     { src: 'store.png', alt: 'Image 1', caption: 'Caption 1' },
     { src: 'store_inner1.jpeg', alt: 'Image 2', caption: 'Caption 2' },
-    { src: 'store.png', alt: 'Image 3', caption: 'Caption 3' },
+    { src: 'store_inner2.jpeg', alt: 'Image 3', caption: 'Caption 3' },
     // ... more images
   ];
     return (
