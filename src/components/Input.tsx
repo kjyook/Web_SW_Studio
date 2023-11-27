@@ -56,12 +56,6 @@ export const Input : React.FC<InputProps> = ({ id, description, secret, value, o
             '
             htmlFor={id}
             >{description}</label>
-            {/* {value === "" && ({
-                'email': <p className="text-orange-500 text-sm">정확한 이메일 주소나 전화번호를 입력하세요.</p>,
-                'password': <p className="text-orange-500 text-sm">비밀번호는 4~60자 사이여야 합니다.</p>,
-                'text': <p className="text-orange-500 text-sm">이름은 2~30자 사이여야 합니다.</p>,
-            }[secret])
-            } */}
         </div>
         </>
     );
