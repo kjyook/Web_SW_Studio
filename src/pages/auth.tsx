@@ -52,39 +52,40 @@ const Auth = () => {
 
     return (
         <>
-        <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-            <div className="bg-black w-full h-full bg-opacity-50">
-                <nav onClick={() => {}} className="px-12 py-5">
-                    
-                </nav>
-                <div className="flex justify-center">
-                    <div className="bg-black bg-opacity-70 px-16 py-16 self-center my-2 lg:max-w-md rounded-md w-full">
-                        <h2 className="text-white text-4xl mb-8 font-semibold">
+            <div className="bg-emerald-100 w-full h-screen bg-opacity-50">
+                <div className="flex justify-center items-center w-full">
+                    <div className="bg-emeral-200 bg-opacity-70 px-16 py-16 self-center my-2 lg:max-w-md rounded-md w-full">
+                        <h2 className="text-black text-4xl mb-8 font-semibold">
                             {variant === 'login' ? '로그인' : '회원가입'}
                         </h2>
                         <div className="flex flex-col gap-4">
                             {variant === 'signup' && (
                                 <Input id="username" description="이름" secret="text" value={name} onChange={(ev) => setName(ev.target.value)} onKeyPress={handleKeyPress} />
                             )}
-                            {variant === 'signup' && (
-                                <Input id="role" description="손님 or 약사" secret="email" value={role} onChange={(ev) => setRole(ev.target.value)} onKeyPress={handleKeyPress} />
-                            )}
                             <Input id="email" description="이메일 주소 또는 전화번호" secret="email" value={email} onChange={(ev) => setEmail(ev.target.value)} onKeyPress={handleKeyPress} />
                             <Input id="password" description="비밀번호" secret="password" value={password} onChange={(ev) => setPassword(ev.target.value)} onKeyPress={handleKeyPress}/>
+                            {variant === 'signup' && (
+                                <div>
+                                    <label className="text-black" htmlFor="role">역할</label>
+                                    <select className="bg-sky-100 text-zinc-400 w-full py-3 rounded-md" id="role" value={role} onChange={(ev) => setRole(ev.target.value)}>
+                                        <option value="약사">약사</option>
+                                        <option value="손님">사용자</option>
+                                    </select>
+                                </div>
+                            )}
                         </div>
-                        <button onClick={variant === 'login' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10">
+                        <button onClick={variant === 'login' ? login : register} className="bg-green-500 py-3 text-white rounded-md w-full mt-10">
                             {variant === 'login' ? '로그인' : '회원가입'}
                         </button>
                         <p className="text-neutral-500 mt-12">
-                            {variant === 'login' ? 'Netflix 회원이 아니신가요?' : '이미 회원이신가요?'}
-                            <span onClick={toggleVariant} className="text-white ml-1 hover:underline cursor-pointer">
+                            {variant === 'login' ? '리본약국 회원이 아니신가요?' : '이미 회원이신가요?'}
+                            <span onClick={toggleVariant} className="text-black ml-1 hover:underline cursor-pointer">
                                 {variant === 'login' ? '지금 가입하세요' : '로그인 하세요'}
                             </span>
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
         </>
     )
 };

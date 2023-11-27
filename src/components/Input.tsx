@@ -24,8 +24,8 @@ export const Input : React.FC<InputProps> = ({ id, description, secret, value, o
             pb-1.5
             w-full 
             text-md
-            text-white
-            bg-neutral-700 
+            text-black
+            bg-sky-100 
             appearance-none
             focus:outline-none
             focus:ring-0
