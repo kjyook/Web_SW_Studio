@@ -13,7 +13,7 @@ const Tabs = ({ defaultTab, tabs }) => {
 
   return (
     <div className={styles.headerContainer}>
-      <Link href="/page1">
+      <Link href="/">
         <div className={styles.logo}>
           <span className={styles.ribbon}>리본</span>
           <span className={styles.pharmacy}>약국</span>
