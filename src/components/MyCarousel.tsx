@@ -1,6 +1,7 @@
 import { Image } from 'react-bootstrap';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import styles from '../pages/drugstore.module.css';
 
 interface Image {
     src: string;
@@ -15,9 +16,9 @@ interface Image {
 const MyCarousel: React.FC<MyCarouselProps> = ({ images }) => {
   return (
     <div>
-        <Carousel className='carousel'>
+        <Carousel className={styles.carousel}>
         {images.map((image, index) => (
-            <div className="carouselItem" key={index}>
+            <div className={styles.carouselItem} key={index}>
                 <Image src={image.src} alt={image.alt} width={100} height={80}/>
             </div>
         ))}
