@@ -1,7 +1,7 @@
 import { Image } from 'react-bootstrap';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import styles from '../pages/drugstore.module.css';
+import styles from '../pages/drugstore/drugstore.module.css';
 
 interface Image {
     src: string;

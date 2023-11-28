@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './Tabs.module.css';
 
-const Tabs = ({ defaultTab, tabs }) => {
+export const Tabs = ({ defaultTab, tabs }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
   const changeTab = (tabName) => {
