@@ -2,6 +2,8 @@ import React from 'react';
 import Tabs from '@/components/Tabs/Tabs'; // 실제 파일 구조에 맞게 경로 조정
 import Footer from '@/components/Footer/Footer'; 
 import styles from './HotTopic.module.css'; // CSS 모듈 추가
+import HealthBoard from '@/components/HotTopic/HealthBoard';
+import Content from './Content';
 
 const HotTopic = () => {
   const tabs = [
@@ -13,9 +15,11 @@ const HotTopic = () => {
   ];
 
   return (
+
     <div>
       <Tabs defaultTab="Main" tabs={tabs} />
       
+      <div className={styles.mainContent}>
       {/* 이달의 건강 이슈: 불면증 */}
       <div className={styles['hot-topic-content']}>
         <h2>12월 건강 이슈: 불면증</h2>
@@ -51,8 +55,11 @@ const HotTopic = () => {
 
         <h3>추가 정보</h3>
         <p>불면증에 대한 추가 정보와 전문적인 조언을 얻기 위해 약사에게 문의하거나 관련 전문가와 상담하세요.</p>
+        
       </div>
-      
+      <HealthBoard /> 
+        
+      </div>
       <Footer/>
     </div>
   );
