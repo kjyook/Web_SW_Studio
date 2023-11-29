@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(252, 228, 236, 0.4); /* Pink color with 80% opacity */
+    background-color: white; /* Pink color with 80% opacity */
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #ffff;

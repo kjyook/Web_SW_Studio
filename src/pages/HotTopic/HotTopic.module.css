@@ -1,0 +1,38 @@
+.hot-topic-content {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .hot-topic-content h2 {
+    color: #333366;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .hot-topic-content h3 {
+    color: #336699;
+    margin-top: 20px;
+  }
+  
+  .hot-topic-content p, .hot-topic-content ul {
+    color: #333333;
+    line-height: 1.6;
+  }
+  
+  .hot-topic-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
