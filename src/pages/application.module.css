@@ -1,0 +1,62 @@
+.applicationPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+.applicationInfo {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 700px;
+}
+.applicationInfo ul {
+    padding: 0 10px;
+    width: 100%;
+}
+.applicationInfo li {
+    display: flex;
+    border: 1px solid pink;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+.applicationInfo label {
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    width: 20%;
+    font-size: 1rem;
+    font-weight: 800;
+}
+.applicationInfo input {
+    width: 100%;
+    margin-left: 20px;
+}
+.applicationTitle {
+    margin: 30px;
+    border: 1px solid pink;
+    width: 35%;
+    background-color: pink;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.applicationSubmit {
+    margin-top: 2rem;
+}
+.submitBtn {
+    border: 1px solid pink;
+    border-radius: 10px;
+    background-color: pink;
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 800;
+}
