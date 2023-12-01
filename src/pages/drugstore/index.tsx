@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import logoImage from '../../public/logo.jpg';
-import MyCarousel from '../components/MyCarousel';
+import logoImage from 'public/logo.jpg';
+import MyCarousel from '@/components/MyCarousel';
 import styles from './drugstore.module.css';
 
 const DrugStore = () => {

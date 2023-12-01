@@ -1,7 +1,16 @@
-export default function Home() {
+// index.tsx
+
+import React from 'react';
+import Tabs from '@/components/Tabs/Tabs'; // Adjust the path based on your actual file structure
+
+const IndexPage = () => {
+  const tabs = ['drugstore', 'page2', 'page3', 'page4', 'page5'];
+
   return (
-    <>
-    <h1>dkssudgktpdya</h1>
-    </>
-  )
-}
+    <div>
+      <Tabs defaultTab="Main" tabs={tabs} />
+    </div>
+  );
+};
+
+export default IndexPage;
