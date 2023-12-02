@@ -3,15 +3,18 @@ import Image from 'next/image';
 import logoImage from 'public/logo.jpg';
 import MyCarousel from '@/components/MyCarousel';
 import styles from './drugstore.module.css';
+import Tabs from '@/components/Tabs/Tabs';
 
 const DrugStore = () => {
   const images = [
-    { src: 'store.png', alt: 'Image 1', caption: 'Caption 1' },
-    { src: 'store_inner1.jpeg', alt: 'Image 2', caption: 'Caption 2' },
-    { src: 'store_inner2.jpeg', alt: 'Image 3', caption: 'Caption 3' },
+    { src: 'store_outdoor_2.png', alt: 'Image 1', caption: 'Caption 1' },
+    { src: 'store_indoor_1.png', alt: 'Image 2', caption: 'Caption 2' },
+    { src: 'store_indoor_2.png', alt: 'Image 3', caption: 'Caption 3' },
   ];
+  const tabs = ['drugstore', 'page2', 'application', 'page4', 'page5'];
     return (
       <div className={styles.mainPage}>
+        <Tabs defaultTab="Main" tabs={tabs} />
         <div className={styles.topSection}>
           <div className={styles.titleArea}>
             <Image src={logoImage} width={100} height={100} alt='logo'/>

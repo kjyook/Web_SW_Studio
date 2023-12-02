@@ -4,8 +4,10 @@
     justify-content: center;
 }
 .mainPage {
-    width: 55%;
+    width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .topSection {
     border-bottom: 3px solid black;
@@ -47,7 +49,9 @@
     font-weight: 600;
 }
 .bottomSection{
+    width: 50%;
     margin-top: 20px;
+    align-self: center;
 }
 .carousel{
     width: 100% !important;
