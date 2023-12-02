@@ -3,7 +3,6 @@ import Tabs from '@/components/Tabs/Tabs'; // 실제 파일 구조에 맞게 경
 import Footer from '@/components/Footer/Footer'; 
 import styles from './HotTopic.module.css'; // CSS 모듈 추가
 import HealthBoard from '@/components/HotTopic/HealthBoard';
-import Content from './Content';
 
 const HotTopic = () => {
   const tabs = [
