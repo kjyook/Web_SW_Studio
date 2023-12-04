@@ -11,10 +11,9 @@ const DrugStore = () => {
     { src: 'store_indoor_1.png', alt: 'Image 2', caption: 'Caption 2' },
     { src: 'store_indoor_2.png', alt: 'Image 3', caption: 'Caption 3' },
   ];
-  const tabs = ['drugstore', 'page2', 'application', 'page4', 'page5'];
     return (
       <div className={styles.mainPage}>
-        <Tabs defaultTab="Main" tabs={tabs} />
+        <Tabs />
         <div className={styles.topSection}>
           <div className={styles.titleArea}>
             <Image src={logoImage} width={100} height={100} alt='logo'/>
