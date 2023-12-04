@@ -4,12 +4,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './Tabs.module.css';
 
-export const Tabs = ({ defaultTab, tabs }) => {
-  const [activeTab, setActiveTab] = useState(defaultTab);
+export const Header = () => {
+  const tabs = [
+    { label: '약국소개', path: 'drugstore' },
+    { label: '약품추천', path: 'page2' },
+    { label: '약품신청', path: 'page3' },
+    { label: '약품 재고 확인', path: 'page4' },
+    { label: '이번달 건강 이슈', path: 'HotTopic' }
+    // 나머지 탭들도 이와 같은 형식으로 추가...
+  ];
 
-  const changeTab = (tabPath) => {
-    setActiveTab(tabPath);
-  };
   return (
     <div className={styles.headerContainer}>
       <Link href="/drugstore">
@@ -22,10 +26,7 @@ export const Tabs = ({ defaultTab, tabs }) => {
       <div className={styles.tabButtonContainer}>
         {tabs.map(({ label, path }) => (
           <Link href={`/${path}`} key={path}>
-            <button
-              onClick={() => changeTab(path)}
-              className={`${styles.tabButton} ${path === activeTab ? styles.activeTab : ''}`}
-            >
+            <button className={styles.tabButton}>
               {label}
             </button>
           </Link>

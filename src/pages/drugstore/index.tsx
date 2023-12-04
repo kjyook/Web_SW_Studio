@@ -3,7 +3,7 @@ import Image from 'next/image';
 import logoImage from 'public/logo.jpg';
 import MyCarousel from '@/components/MyCarousel';
 import styles from './drugstore.module.css';
-import Tabs from '@/components/Tabs/Tabs';
+import Tabs from '@/components/Header/Header';
 
 const DrugStore = () => {
   const images = [

@@ -1,4 +1,4 @@
-import Tabs from '@/components/Tabs/Tabs';
+import Tabs from '@/components/Header/Header';
 import styles from './application.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { FormEvent, useState } from 'react';
