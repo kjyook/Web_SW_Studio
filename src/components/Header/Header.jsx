@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Header.module.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import SideBar from "../SideBar";
@@ -21,8 +22,9 @@ export const Header = () => {
   return (
     <>
       <div className={styles.headerContainer}>
-        <Link href="/drugstore">
+        <Link href="/">
           <div className={styles.logo}>
+            <Image src="/icons/logo-removebg.png" width={75} height={75} alt='logo' />
             <span className={styles.ribbon}>리본</span>
             <span className={styles.pharmacy}>약국</span>
           </div>
@@ -35,17 +37,15 @@ export const Header = () => {
             </Link>
           ))}
         </div>
-        <div>
-          <div
-            onClick={() => setSidebar((val) => !val)}
-            className="md:hidden text-3xl"
-          >
-            <RiArrowDropDownLine
-              className={`transition ${sidebar ? "rotate-180" : "rotate-0"}`}
-            />
-          </div>
-          <SideBar visible={sidebar} tabs={tabs} />
+        <div
+          onClick={() => setSidebar((val) => !val)}
+          className="md:hidden text-3xl"
+        >
+          <RiArrowDropDownLine
+            className={`transition ${sidebar ? "rotate-180" : "rotate-0"}`}
+          />
         </div>
+          <SideBar visible={sidebar} tabs={tabs} />
       </div>
     </>
   );

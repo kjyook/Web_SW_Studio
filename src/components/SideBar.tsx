@@ -13,7 +13,7 @@ const SideBar = ({ tabs, visible }: SideBarProps) => {
 
   return (
     <>
-      <div className="bg-white w-56 absolute top-14 right-0 py-5 flex flex-col border-2 border-gray-800">
+      <div className="bg-white w-56 absolute top-20 right-0 py-5 flex flex-col border-2 border-gray-800">
         <div className="flex flex-col gap-4">
           {tabs.map(({ label, path }) => (
             <Link href={`/${path}`} key={path}>

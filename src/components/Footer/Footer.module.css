@@ -1,43 +1,43 @@
 .footerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2; 
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footerContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; 
-  }
-  
-  .logo{
-    height:180px;
-  }
-  .logoContainer img {
-    height: 50px; 
-  }
-  
-  .contactInfo p {
-    margin: 5px 0;
-    color: #333; 
-  }
-  
-  .socialMediaLinks a img {
-    height: 30px; 
-    margin: 0 10px;
-  }
-  
-  .copyRightInfo p {
-    color: #666; 
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
 
-/* 미디어 쿼리를 사용하여 반응형 디자인 적용 */
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logo {
+  height: 180px;
+}
+.logoContainer img {
+  height: 50px;
+}
+
+.contactInfo p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.socialMediaLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyRightInfo p {
+  color: #666;
+}
+
 @media (max-width: 768px) {
   .footerContainer {
     padding: 10px;
@@ -48,18 +48,14 @@
     text-align: center;
   }
 
-  .contactInfo, .socialMediaLinks, .copyRightInfo {
+  .copyRightInfo {
     margin-bottom: 20px;
-  }
-
-  .socialMediaLinks img {
-    margin: 0 5px; /* 아이콘 간격 줄이기 */
+    margin-top: 20px;
   }
 }
 
 @media only screen and (max-width: 390px) {
   .footerContainer {
-    /* 모바일 화면에서의 스타일 조정 */
     padding: 10px;
     text-align: center;
   }
@@ -69,17 +65,18 @@
     align-items: center;
   }
 
-  .contactInfo, .socialMediaLinks, .copyRightInfo {
+  .contactInfo,
+  .socialMediaLinks,
+  .copyRightInfo {
     margin-bottom: 10px;
   }
 
   .socialMediaLinks img {
-    width: 25px; /* 아이콘 크기 조정 */
+    width: 25px;
     margin: 0 5px;
   }
 
-  /* 필요한 경우 로고 크기 조정 */
   .logo {
-    width: 50%; /* 또는 적절한 크기로 조정 */
+    width: 50%;
   }
 }
