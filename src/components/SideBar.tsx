@@ -17,7 +17,9 @@ const SideBar = ({ tabs, visible }: SideBarProps) => {
         <div className="flex flex-col gap-4">
           {tabs.map(({ label, path }) => (
             <Link href={`/${path}`} key={path}>
-              <button className="">{label}</button>
+              <button className="bg-[#ff4081] text-white px-2 py-1 w-9/12 border-none font-bold rounded-2xl">
+                {label}
+              </button>
             </Link>
           ))}
         </div>
