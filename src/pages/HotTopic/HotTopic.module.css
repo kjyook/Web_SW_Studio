@@ -65,3 +65,19 @@
     }
   }
   
+
+
+  /* 모바일 화면을 위한 미디어 쿼리 */
+@media only screen and (max-width: 390px) {
+  .mainContent {
+    flex-direction: column; /* 내용과 HealthBoard를 세로로 정렬 */
+  }
+
+  .hot-topic-content {
+    /* 모바일 화면에서의 스타일 조정 */
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px; /* 필요에 따라 조정 */
+  }
+
+}

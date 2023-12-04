@@ -57,4 +57,29 @@
   }
 }
 
-  
+@media only screen and (max-width: 390px) {
+  .footerContainer {
+    /* 모바일 화면에서의 스타일 조정 */
+    padding: 10px;
+    text-align: center;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactInfo, .socialMediaLinks, .copyRightInfo {
+    margin-bottom: 10px;
+  }
+
+  .socialMediaLinks img {
+    width: 25px; /* 아이콘 크기 조정 */
+    margin: 0 5px;
+  }
+
+  /* 필요한 경우 로고 크기 조정 */
+  .logo {
+    width: 50%; /* 또는 적절한 크기로 조정 */
+  }
+}

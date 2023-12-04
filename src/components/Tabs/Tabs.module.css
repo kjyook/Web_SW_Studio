@@ -80,3 +80,18 @@
     margin: 8px 0; /* 탭 버튼들 사이의 수직 간격 */
   }
 }
+
+
+/* 모바일 화면을 위한 미디어 쿼리 */
+@media only screen and (max-width: 390px) {
+  .tabButtonContainer {
+    flex-direction: column; /* 버튼을 세로로 정렬 */
+    align-items: flex-start;
+  }
+
+  .tabButton {
+    margin: 5px 0; /* 탭 버튼 사이의 간격 조정 */
+    padding: 10px; /* 모바일 화면에 맞는 패딩 조정 */
+  }
+
+}
