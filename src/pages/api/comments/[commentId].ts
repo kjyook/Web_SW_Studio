@@ -10,27 +10,27 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await serverAuth(req, res);
 
-    const { bulletinId } = req.query;
+    const { commentId } = req.query;
 
-    if (typeof bulletinId !== "string") {
+    if (typeof commentId !== "string") {
       throw new Error("Invalid ID");
     }
 
-    if (!bulletinId) {
+    if (!commentId) {
       throw new Error("Invalid ID");
     }
 
-    const bullentin = await prismadb.bulletin.findUnique({
+    const comment = await prismadb.comment.findUnique({
       where: {
-        id: bulletinId,
+        id: commentId,
       },
     });
 
-    if (!bullentin) {
+    if (!comment) {
       throw new Error("Invalid ID");
     }
 
-    return res.status(200).json(bullentin);
+    return res.status(200).json(comment);
   } catch (error) {
     console.log(error);
     return res.status(400).end();
