@@ -10,13 +10,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await serverAuth(req, res);
 
-    const bullentins = await prismadb.bulletin.findMany({
+    const bulletins = await prismadb.bulletin.findMany({
       include: {
-        comments: true,
+        comments: true
       }
     });
 
-    return res.status(200).json(bullentins);
+    return res.status(200).json(bulletins);
   } catch (error) {
     console.log(error);
     return res.status(400).end();

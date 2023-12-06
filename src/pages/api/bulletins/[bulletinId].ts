@@ -20,17 +20,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error("Invalid ID");
     }
 
-    const bullentin = await prismadb.bulletin.findUnique({
+    const bulletin = await prismadb.bulletin.findUnique({
       where: {
         id: bulletinId,
       },
     });
 
-    if (!bullentin) {
+    if (!bulletin) {
       throw new Error("Invalid ID");
     }
 
-    return res.status(200).json(bullentin);
+    return res.status(200).json(bulletin);
   } catch (error) {
     console.log(error);
     return res.status(400).end();
