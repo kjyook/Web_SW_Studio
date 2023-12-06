@@ -11,7 +11,8 @@ const Auth = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('');
+    /* const [role, setRole] = useState(''); */
+    const role = '사용자';
 
     const toggleVariant = useCallback(() => {
         setVariant((prev) => prev === 'login' ? 'signup' : 'login');
@@ -62,9 +63,9 @@ const Auth = () => {
                             {variant === 'signup' && (
                                 <Input id="username" description="이름" secret="text" value={name} onChange={(ev) => setName(ev.target.value)} onKeyPress={handleKeyPress} />
                             )}
-                            <Input id="email" description="이메일 주소 또는 전화번호" secret="email" value={email} onChange={(ev) => setEmail(ev.target.value)} onKeyPress={handleKeyPress} />
+                            <Input id="email" description="이메일 주소" secret="email" value={email} onChange={(ev) => setEmail(ev.target.value)} onKeyPress={handleKeyPress} />
                             <Input id="password" description="비밀번호" secret="password" value={password} onChange={(ev) => setPassword(ev.target.value)} onKeyPress={handleKeyPress}/>
-                            {variant === 'signup' && (
+                            {/* {variant === 'signup' && (
                                 <div>
                                     <label className="text-black" htmlFor="role">역할</label>
                                     <select className="bg-sky-100 text-zinc-400 w-full py-3 rounded-md" id="role" value={role} onChange={(ev) => setRole(ev.target.value)}>
@@ -72,7 +73,7 @@ const Auth = () => {
                                         <option value="손님">사용자</option>
                                     </select>
                                 </div>
-                            )}
+                            )} */}
                         </div>
                         <button onClick={variant === 'login' ? login : register} className="bg-green-500 py-3 text-white rounded-md w-full mt-10">
                             {variant === 'login' ? '로그인' : '회원가입'}
