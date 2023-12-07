@@ -1,0 +1,74 @@
+/* Header.module.css */
+
+.headerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white; /* Pink color with 80% opacity */
+    border-bottom: 2px solid #ffff;
+    padding: 1.2rem;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ribbon,
+  .pharmacy {
+    font-size: 3.0rem;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      font-size: 2.0rem;
+    }
+  }
+  
+  .ribbon {
+    color: #f06292;
+    margin-right: 8px;
+  }
+  
+  .pharmacy {
+    color: #4caf50;
+  }
+  
+  .tabButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  
+  .tabButton {
+    background-color: #ff4081; /* Pink color */
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 8px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tabButton:hover {
+    background-color: #d81b60;
+    transform: scale(1.1);
+  }
+  
+  .activeTab {
+    font-weight: bold;
+  }
