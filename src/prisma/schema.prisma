@@ -23,14 +23,21 @@ model Drug {
   name String @db.ObjectId
   price String
   quantity String
-
-  user DrugStore @relation(fields: [name], references: [id], onDelete: Cascade)
+  image String
 }
 
-model DrugStore {
+model Bulletin {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  drugStoreId String @db.ObjectId
-  location String
-  contract String
-  drugs Drug[]
+  title String
+  content String
+  createdAt DateTime @default(now())
+  comments Comment[]
+}
+
+model Comment {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+  createdAt DateTime @default(now())
+  userId String
+  bulletin Bulletin @relation(fields: [id], references: [id])
 }

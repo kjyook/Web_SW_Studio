@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 type Tab = { label: string; path: string };
 
@@ -22,6 +23,12 @@ const SideBar = ({ tabs, visible }: SideBarProps) => {
               </button>
             </Link>
           ))}
+          <div
+            onClick={() => signOut()}
+            className="px-3 text-center text-sm hover:underline"
+          >
+            로그아웃
+          </div>
         </div>
       </div>
     </>

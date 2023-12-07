@@ -16,16 +16,16 @@ const HotTopic = () => {
   return (
 
     <div>
-      <Tabs defaultTab="Main" tabs={tabs} />
+      <Tabs />
       
       <div className={styles.mainContent}>
       {/* 이달의 건강 이슈: 불면증 */}
       <div className={styles['hot-topic-content']}>
         <h2>12월 건강 이슈: 불면증</h2>
-        <h3>불면증 소개</h3>
+        <h3 className="font-bold text-xl">불면증 소개</h3>
         <p>불면증은 수면을 취하는 데 어려움을 겪는 상태를 말합니다. 이는 잠들기 어려움, 자주 깨는 문제, 일찍 깨어나는 것 등을 포함할 수 있습니다.</p>
         
-        <h3>증상</h3>
+        <h3 className="font-bold text-xl">증상</h3>
         <ul>
           <li>잠들기 어려움</li>
           <li>수면 중 자주 깨는 현상</li>
@@ -33,7 +33,7 @@ const HotTopic = () => {
           <li>낮 동안 피곤함 또는 졸림</li>
         </ul>
 
-        <h3>완화 방법</h3>
+        <h3 className="font-bold text-xl">완화 방법</h3>
         <ul>
           <li>카페인 섭취 줄이기</li>
           <li>규칙적인 수면 습관 유지</li>
@@ -41,7 +41,7 @@ const HotTopic = () => {
           <li>편안한 수면 환경 조성</li>
         </ul>
 
-        <h3>추천 영양제</h3>
+        <h3 className="font-bold text-xl">추천 영양제</h3>
        
         <ul>
           <li>멜라토닌: 수면 주기를 조절하는 데 도움이 될 수 있는 자연 발생 호르몬.</li>
@@ -52,7 +52,7 @@ const HotTopic = () => {
 
         <p>이러한 보충제는 자가 치료 전에 전문가와 상담하여 사용하는 것이 좋습니다. 특히 다른 약물을 복용 중인 경우, 상호작용에 대해 의사의 조언을 받아야 합니다.</p>
 
-        <h3>추가 정보</h3>
+        <h3 className="font-bold text-xl">추가 정보</h3>
         <p>불면증에 대한 추가 정보와 전문적인 조언을 얻기 위해 약사에게 문의하거나 관련 전문가와 상담하세요.</p>
         
       </div>

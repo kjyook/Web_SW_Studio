@@ -20,17 +20,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             throw new Error('Invalid ID');
         }
 
-        const movie = await prismadb.drug.findUnique({
+        const drug = await prismadb.drug.findUnique({
             where: {
                 id: drugId
             }
         });
 
-        if (!movie) {
+        if (!drug) {
             throw new Error('Invalid ID')
         }
 
-        return res.status(200).json(movie);
+        return res.status(200).json(drug);
     } catch (error) {
         console.log(error);
         return res.status(400).end();
