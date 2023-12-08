@@ -11,8 +11,46 @@ const Auth = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    /* const [role, setRole] = useState(''); */
+
     const role = '사용자';
+
+    const isEmail = () => {
+        if (email === '') return true;
+
+        let regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+        return regExp.test(email);
+    };
+
+    const isPassword = () => {
+        if (password === '') return true;
+
+        let regPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{4,15}$/;
+
+        return regPassword.test(password);
+    }
+
+    const isName = () => {
+        if (name === '') return true;
+
+        let regName = /^[가-힣]{2,4}$/;
+
+        return regName.test(name);
+    }
+
+    const isUseable = useCallback(() => {
+        let regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+        let regPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{4,15}$/;
+        let regName = /^[가-힣]{2,4}$/;
+
+        if (variant === 'login') {
+            if (regEmail.test(email) && regPassword.test(password)) return true;
+            else return false;
+        } if (variant === 'signup') {
+            if (regEmail.test(email) && regPassword.test(password) && regName.test(name)) return true;
+            else return false;
+        }
+    }, [email, name, password, variant]);
 
     const toggleVariant = useCallback(() => {
         setVariant((prev) => prev === 'login' ? 'signup' : 'login');
@@ -61,10 +99,10 @@ const Auth = () => {
                         </h2>
                         <div className="flex flex-col gap-4">
                             {variant === 'signup' && (
-                                <Input id="username" description="이름" secret="text" value={name} onChange={(ev) => setName(ev.target.value)} onKeyPress={handleKeyPress} />
+                                <Input id="username" description="이름" secret="text" value={name} regular={isName()} onChange={(ev) => setName(ev.target.value)} onKeyPress={handleKeyPress} />
                             )}
-                            <Input id="email" description="이메일 주소" secret="email" value={email} onChange={(ev) => setEmail(ev.target.value)} onKeyPress={handleKeyPress} />
-                            <Input id="password" description="비밀번호" secret="password" value={password} onChange={(ev) => setPassword(ev.target.value)} onKeyPress={handleKeyPress}/>
+                            <Input id="email" description="이메일 주소" secret="email" value={email} regular={isEmail()} onChange={(ev) => setEmail(ev.target.value)} onKeyPress={handleKeyPress} />
+                            <Input id="password" description="비밀번호" secret="password" value={password} regular={isPassword()} onChange={(ev) => setPassword(ev.target.value)} onKeyPress={handleKeyPress} />
                             {/* {variant === 'signup' && (
                                 <div>
                                     <label className="text-black" htmlFor="role">역할</label>
@@ -75,7 +113,7 @@ const Auth = () => {
                                 </div>
                             )} */}
                         </div>
-                        <button onClick={variant === 'login' ? login : register} className="bg-green-500 py-3 text-white rounded-md w-full mt-10">
+                        <button disabled={!isUseable()} onClick={variant === 'login' ? login : register} className={`bg-green-500 py-3 text-white rounded-md w-full mt-10 ${!isUseable() && 'opacity-50'}`}>
                             {variant === 'login' ? '로그인' : '회원가입'}
                         </button>
                         <p className="text-neutral-500 mt-12">
