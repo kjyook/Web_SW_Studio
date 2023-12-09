@@ -4,7 +4,7 @@ import useDrugList from '@/hooks/useDrugList';
 import useCurrentUser from '@/hooks/useCurrentUser';
 
 const Recommend = () => {
-  const { data: drugs = [] } = useDrugList();
+  const { data: drugs = [], isLoading } = useDrugList();
   const { data } = useCurrentUser();
 
   return (
