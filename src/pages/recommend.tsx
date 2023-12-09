@@ -11,7 +11,9 @@ const Recommend = () => {
     <>
       <p>here is recommend drug page</p>
       <p>{data?.email}</p>
-      <DrugList data={drugs} title='Recommend Drugs' />
+      {!isLoading &&
+        <DrugList data={drugs} title='Recommend Drugs' />
+      }
     </>
   );
 };
