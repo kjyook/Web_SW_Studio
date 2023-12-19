@@ -12,7 +12,7 @@ export const Header = () => {
 
   const tabs = [
     { label: "약국소개", path: "drugstore" },
-    { label: "약품추천", path: "page2" },
+    { label: "질문게시판", path: "Board" },
     { label: "약품신청", path: "page3" },
     { label: "약품 재고 확인", path: "page4" },
     { label: "이번달 건강 이슈", path: "HotTopic" },
