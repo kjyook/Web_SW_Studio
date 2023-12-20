@@ -16,7 +16,7 @@ const DrugList = ({ data, title }: MovieListProps) => {
                 <p className="text-white text-md md:text-xl lg:text-2xl font-semibold mb-4">
                     {title}
                 </p>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="flex flex-col justify-center items-center gap-2 w-full h-full">
                     {data.map((movie: any) => (
                         <DrugCard key={movie.id} data={movie} />
                     ))}
