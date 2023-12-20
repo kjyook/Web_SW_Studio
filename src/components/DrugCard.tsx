@@ -6,16 +6,15 @@ interface DrugCardProps {
 }
 
 const DrugCard = ({ data }: DrugCardProps) => {
-  console.log(data)
 
   return (
     <>
-      <div className="flex flex-row justify-center items-center content-between gap-4 border-solid border-2 rounded-xl w-9/12 px-4">
+      <div className="flex flex-row justify-around items-center border-solid border-2 rounded-xl w-9/12 px-2">
         <Image src={data.image} width={100} height={100} alt={data?.name} />
         <div className="flex flex-col justify-center items-center gap-2">
-          <p>{data.name}</p>
-          <p>{data.price}</p>
-          <p>{data.quantity}</p>
+          <p className="font-semibold">{data.name}</p>
+          <p className="italic">{data.price}</p>
+          <p className="italic text-sm">{data.quantity}</p>
         </div>
       </div>
     </>
