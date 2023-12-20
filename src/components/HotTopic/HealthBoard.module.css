@@ -1,33 +1,48 @@
+
 .board {
-    margin: 20px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
-  }
+ 
+  padding: 20px;
+  background-color:  #f0f8ff;
   
-  .board h2 {
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .board ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .board li {
-    margin-bottom: 10px;
-  }
-  
-  .board li a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .board li a:hover {
-    color: #0056b3;
-  }
-  
+}
+
+.board h3 {
+  color: #336699;
+  margin-bottom: 10px;
+  display: flex; /* h2 요소를 flex 컨테이너로 만듭니다 */
+  align-items: center; /* 내부 요소를 수직 중앙에 정렬합니다 */
+}
+
+.board ul {
+  list-style: none;
+  padding: 0;
+}
+
+.board li {
+  margin-bottom: 10px;
+}
+
+.board li a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.board li a:hover {
+  color: #0056b3;
+}
+
+/* 새로운 CSS 클래스 추가 */
+.toggle-icon {
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg); /* 기본 상태는 위를 가리키도록 설정 */
+  margin-left: 10px;
+  cursor: pointer; /* 마우스 오버 시 커서 변경 */
+}
+
+.toggle-icon.open {
+  transform: rotate(-135deg); /* 목록이 열렸을 때 아래를 가리킵니다 */
+}
