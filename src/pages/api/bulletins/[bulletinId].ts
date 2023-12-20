@@ -8,7 +8,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    await serverAuth(req, res);
+    //await serverAuth(req, res);
 
     const { bulletinId } = req.query;
 
@@ -24,6 +24,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       where: {
         id: bulletinId,
       },
+      include: {
+        comments: true,
+      }
     });
 
     if (!bulletin) {

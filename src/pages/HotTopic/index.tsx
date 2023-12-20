@@ -21,7 +21,8 @@ const HotTopic = () => {
       <div className={styles.mainContent}>
       {/* 이달의 건강 이슈: 불면증 */}
       <div className={styles['hot-topic-content']}>
-        <h2>12월 건강 이슈: 불면증</h2>
+      <HealthBoard /> 
+        <h2>12월 Health Issue: 불면증</h2>
         <h3 className="font-bold text-xl">불면증 소개</h3>
         <p>불면증은 수면을 취하는 데 어려움을 겪는 상태를 말합니다. 이는 잠들기 어려움, 자주 깨는 문제, 일찍 깨어나는 것 등을 포함할 수 있습니다.</p>
         
@@ -56,7 +57,7 @@ const HotTopic = () => {
         <p>불면증에 대한 추가 정보와 전문적인 조언을 얻기 위해 약사에게 문의하거나 관련 전문가와 상담하세요.</p>
         
       </div>
-      <HealthBoard /> 
+      
         
       </div>
       <Footer/>

@@ -1,0 +1,83 @@
+.hot-topic-content {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    
+  }
+
+  .mainContent {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .hot-topic-content h2 {
+    color: #333366;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .hot-topic-content h3 {
+    color: #336699;
+    margin-top: 20px;
+  }
+  
+  .hot-topic-content p, .hot-topic-content ul {
+    color: #333333;
+    line-height: 1.6;
+  }
+  
+  .hot-topic-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+
+@media (max-width: 768px) {
+    .mainContent {
+      flex-direction: column;
+    }
+  
+    .hot-topic-content {
+      /* 모바일 화면에서의 스타일 조정 */
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px; /* 필요에 따라 조정 */
+    }
+  
+    .hot-topic-content h2 {
+      font-size: 24px; /* 작은 화면에서 제목 크기 조정 */
+    }
+  
+    .hot-topic-content h3 {
+      font-size: 18px; /* 작은 화면에서 부제목 크기 조정 */
+    }
+  }
+  
+
+
+  /* 모바일 화면을 위한 미디어 쿼리 */
+@media only screen and (max-width: 390px) {
+  .mainContent {
+    flex-direction: column; /* 내용과 HealthBoard를 세로로 정렬 */
+  }
+
+  .hot-topic-content {
+    /* 모바일 화면에서의 스타일 조정 */
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px; /* 필요에 따라 조정 */
+  }
+
+}
