@@ -1,31 +1,38 @@
 .hot-topic-content {
     margin: 20px;
     padding: 20px;
-    background-color: #f0f8ff;
+    background-color: rgba(216, 27, 96, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
-    
   }
 
   .mainContent {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
+  .detailContent{
+    position: relative;
+    top: 0rem;
+  }
 
   .hot-topic-content h2 {
     color: #333366;
     margin-bottom: 15px;
+    margin-top: 30px;
     text-align: center;
     font-size: 50px;
     font-weight: bold;
     font-family: 'Noto Sans KR', sans-serif;
   }
   
-  .hot-topic-content h3 {
-    color: #336699;
-    margin-top: 20px;
+ .hot-topic-content .detailContent h3 {
+    color: #333366;
+    background-color: rgba(216, 27, 96, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 2.5rem;
   }
   
   .hot-topic-content p, .hot-topic-content ul {

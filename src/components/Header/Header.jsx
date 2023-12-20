@@ -6,9 +6,12 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import SideBar from "../SideBar";
+import { useRouter } from "next/router";
 
 export const Header = () => {
   const [sidebar, setSidebar] = useState(false);
+  const router = useRouter();
+  console.log("dd", router.pathname);
 
   const tabs = [
     { label: "약국소개", path: "drugstore" },
@@ -22,7 +25,7 @@ export const Header = () => {
   return (
     <>
       <div className={styles.headerContainer}>
-        <Link href="/">
+        <Link href="/drugstore" className={styles.pharmacyName}>
           <div className={styles.logo}>
             <Image src="/icons/logo-removebg.png" width={75} height={75} alt='logo' />
             <span className={styles.ribbon}>리본</span>
@@ -33,7 +36,7 @@ export const Header = () => {
         <div className={styles.tabButtonContainer}>
           {tabs.map(({ label, path }) => (
             <Link href={`/${path}`} key={path}>
-              <button className={styles.tabButton}>{label}</button>
+              <button className={`${styles.tabButton} ${router.pathname === `/${path}` ? styles.activeTab : ''}`}>{label}</button>
             </Link>
           ))}
         </div>

@@ -2,6 +2,7 @@ import Tabs from '@/components/Header/Header';
 import styles from './application.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { FormEvent, useState } from 'react';
+import Footer from '@/components/Footer/Footer';
 
 interface FormData {
     drugName: string;
@@ -73,7 +74,7 @@ const Application = () => {
                             <input type="text" name='quantity' placeholder="수량을 입력하세요." value={formData.quantity} onChange={handleChange} />
                         </li>
                         <li>
-                            <label>구매<br /> 예정일</label>
+                            <label>구매 예정일</label>
                             <input type="text" name='plannedDate' placeholder="날짜를 입력하세요." value={formData.plannedDate} onChange={handleChange} />
                         </li>
                         <li>
@@ -90,6 +91,7 @@ const Application = () => {
                     <button className={styles.submitBtn} type="submit">신청하기</button>
                 </div>
             </form>
+            <Footer/>
         </div>
     )
 }
