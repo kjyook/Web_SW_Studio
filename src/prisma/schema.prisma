@@ -20,7 +20,7 @@ model User {
 
 model Drug {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String @db.ObjectId
+  name String
   price String
   quantity String
   image String
