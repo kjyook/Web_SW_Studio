@@ -24,6 +24,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       where: {
         id: bulletinId,
       },
+      include: {
+        comments: true,
+      }
     });
 
     if (!bulletin) {
