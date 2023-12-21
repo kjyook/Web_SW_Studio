@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Image from "next/image";
 
 interface DrugCardProps {
@@ -10,10 +9,14 @@ const DrugCard = ({ data }: DrugCardProps) => {
 
   return (
     <>
-      <p>{data.name}</p>
-      <p>{data.price}</p>
-      <p>{data.quantity}</p>
-      <Image src={data.image} width={30} height={30} alt={data?.name} />
+      <div className="flex flex-row justify-around items-center border-solid border-2 rounded-xl w-9/12 px-2">
+        <Image src={data.image} width={100} height={100} alt={data?.name} />
+        <div className="flex flex-col justify-center items-center gap-2">
+          <p className="font-semibold">{data.name}</p>
+          <p className="italic">{data.price}</p>
+          <p className="italic text-sm">{data.quantity}</p>
+        </div>
+      </div>
     </>
   );
 };

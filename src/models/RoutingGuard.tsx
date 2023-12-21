@@ -10,7 +10,7 @@ export const RoutingGuard = () => {
     console.log(user);
 
     //여기에 보호될 페이지들 전부 작성하시면 됩니다.
-    const protectedPages = ['/'];
+    const protectedPages = ['/', '/bulletin', '/recommend', 'application'];
 
     useEffect(() => {
         const currentPath = getCurrentPath();

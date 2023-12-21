@@ -10,8 +10,10 @@
     flex-direction: column;
 }
 .topSection {
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
     padding-bottom: 3rem;
+    padding-top: 3rem;
+    background-color: #f5f8fa;
 }
 .titleArea {
     display: flex;
@@ -28,7 +30,7 @@
     font-weight: 800;
 }
 .reborn {
-    color: pink;
+    color: #ff4081;
 }
 .pharmacy {
     color: cadetblue;
@@ -42,7 +44,7 @@
 .titleInfo {
     font-size: 30px;
     font-weight: 600;
-    color: pink;
+    color: #ff4081;
 }
 .infoTitle {
     font-size: 17px;
