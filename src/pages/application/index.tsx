@@ -3,6 +3,7 @@ import styles from './application.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { FormEvent, useState } from 'react';
 import Footer from '@/components/Footer/Footer';
+import useCurrentUser from '@/hooks/useCurrentUser';
 
 interface FormData {
     drugName: string;
@@ -13,6 +14,8 @@ interface FormData {
 }
 
 const Application = () => {
+    const { data: user } = useCurrentUser();
+
     const [formData, setFormData] = useState<FormData>({
         drugName: '',
         quantity: '',
@@ -32,7 +35,7 @@ const Application = () => {
         event.preventDefault();
 
         const emailData = {
-            senderEmail: 'dydgus9952@kau.kr',
+            senderEmail: user.email,
             recipientEmail: 'dydgus9952@naver.com',
             subject: '리본약국 약품 신청서',
             message: JSON.stringify(formData),

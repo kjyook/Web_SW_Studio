@@ -30,13 +30,18 @@ const BoardPage = () => {
                 pathname: `/Board/${bulletin.id}`,
                 query: { board: JSON.stringify(bulletin) }
               }}
-              >
+            >
               <div className={styles.bulletin}>
                 <h2>{bulletin.title}</h2>
                 <p>{bulletin.content}</p>
               </div>
             </Link>
           ))}
+        </div>
+        <div className='pb-3 flex justify-end pr-3'>
+          <Link href='/Board/newboard'>
+            <button className='bg-green-300 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline'>글쓰기</button>
+          </Link>
         </div>
       </div>
       <Footer />

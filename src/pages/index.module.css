@@ -1,0 +1,65 @@
+#__next {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.mainPage {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.topSection {
+    border-bottom: 2px solid black;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    background-color: #f5f8fa;
+}
+.titleArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titleSubArea {
+    display: flex;
+    justify-content: center;
+}
+.title {
+    font-size: 50px;
+    text-align: center;
+    font-weight: 800;
+}
+.reborn {
+    color: #ff4081;
+}
+.pharmacy {
+    color: cadetblue;
+    text-align: center;
+}
+.titleInfoArea {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.titleInfo {
+    font-size: 30px;
+    font-weight: 600;
+    color: #ff4081;
+}
+.infoTitle {
+    font-size: 17px;
+    font-weight: 600;
+}
+.bottomSection{
+    width: 50%;
+    margin-top: 20px;
+    align-self: center;
+}
+.carousel{
+    width: 100% !important;
+    border-radius: 10px;
+}
+.carouselItem{
+    width: 100%;
+    border-radius: 10px;
+}
