@@ -5,7 +5,7 @@ import serverAuth from "@/libs/serverAuth";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     if (req.method === "POST") {
-      const { content, bullentinId } = req.body;
+      const { content, bulletinId } = req.body;
       const { currentUser } = await serverAuth(req, res);
 
       const comment = await prismadb.comment.create({
@@ -14,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           content: content,
           bulletin: {
             connect: {
-              id: bullentinId,
+              id: bulletinId,
             },
           }
         },
