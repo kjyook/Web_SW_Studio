@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 export const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const router = useRouter();
-  console.log("dd", router.pathname);
 
   const tabs = [
     { label: "약국소개", path: "drugstore" },

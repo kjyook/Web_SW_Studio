@@ -6,17 +6,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "POST") {
       const { title, content } = req.body;
 
-      /* const existingBullentin = await prismadb.bulletin.findUnique({
-        where: {
-          id: bullentinId,
-        },
-      });
-
-      if (existingBullentin) {
-        console.log("already exists");
-        return res.status(422).json({ error: "Bullentin already exists" });
-      } */
-
       const bulletin = await prismadb.bulletin.create({
         data: {
           title: title,
@@ -24,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         },
       });
 
-      console.log("create", title, content);
+      console.log("create", title, content, bulletin);
 
       res.status(200).json(bulletin);
     }
