@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
+import useCurrentUser from "@/hooks/useCurrentUser";
+import { useNavigation } from "@/hooks/useNavigation";
 
 type Tab = { label: string; path: string };
 
@@ -10,6 +12,9 @@ interface SideBarProps {
 }
 
 const SideBar = ({ tabs, visible }: SideBarProps) => {
+  const { data: user } = useCurrentUser();
+  const { router } = useNavigation();
+
   if (!visible) return null;
 
   return (
@@ -23,12 +28,22 @@ const SideBar = ({ tabs, visible }: SideBarProps) => {
               </button>
             </Link>
           ))}
-          <div
-            onClick={() => signOut()}
-            className="px-3 text-center text-sm hover:underline"
-          >
-            로그아웃
-          </div>
+          {user &&
+            <div
+              onClick={() => signOut()}
+              className="px-3 text-center text-sm hover:underline"
+            >
+              로그아웃
+            </div>
+          }
+          {!user &&
+            <div
+              onClick={() => router.push('/auth')}
+              className="px-3 text-center text-sm hover:underline"
+            >
+              로그인
+            </div>
+          }
         </div>
       </div>
     </>
