@@ -3,7 +3,8 @@ import Image from 'next/image';
 import logoImage from 'public/logo.jpg';
 import MyCarousel from '@/components/MyCarousel';
 import styles from './drugstore.module.css';
-import Tabs from '@/components/Header/Header';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 const DrugStore = () => {
   const images = [
@@ -13,14 +14,8 @@ const DrugStore = () => {
   ];
     return (
       <div className={styles.mainPage}>
-        <Tabs />
+        <Header />
         <div className={styles.topSection}>
-          <div className={styles.titleArea}>
-            <Image src={logoImage} width={100} height={100} alt='logo'/>
-            <div className={styles.titleSubArea}>
-              <span className={`${styles.reborn} ${styles.title}`}>리본</span><span className={`${styles.reborn} ${styles.title}`}>약국</span>
-            </div>
-          </div>
           <div className={styles.titleInfoArea}>
             <p className={styles.titleInfo}>Re Born PHARMACY</p>
           </div>
@@ -34,6 +29,7 @@ const DrugStore = () => {
         <div className={styles.bottomSection}>
           <MyCarousel images={images} />
         </div>
+        <Footer />
       </div>
     )
 }

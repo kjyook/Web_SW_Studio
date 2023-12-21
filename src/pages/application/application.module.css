@@ -7,15 +7,21 @@
     margin-top: 2rem;
     margin-bottom: 5rem;
 }
+
 .applicationInfo {
-    border: 1px solid black;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 700px;
+    width: 60.0rem;
+    background-color: rgba(216, 27, 96, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    @media (max-width: 768px) {
+        width: 22rem;
+    }
 }
 .applicationInfo ul {
     padding: 0 10px;
@@ -27,14 +33,16 @@
     border-radius: 10px;
     margin-bottom: 3rem;
     width: 100%;
+    background-color: white;
 }
 .applicationInfo label {
-    background-color: pink;
+    background-color: rgba(216, 27, 96, 0.3);
     padding: 10px;
     border-radius: 10px;
-    width: 20%;
+    width: 50%;
     font-size: 1rem;
     font-weight: 800;
+    color: #333366;
 }
 .applicationInfo input {
     width: 100%;
@@ -42,20 +50,23 @@
 }
 .applicationTitle {
     margin: 30px;
-    border: 1px solid pink;
-    width: 35%;
-    background-color: pink;
+    width: auto;
+    color: #333366;
+    padding: 0.5rem 2.0rem;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 3.2rem;
     font-weight: 900;
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 }
 .applicationSubmit {
     margin-top: 2rem;
 }
 .submitBtn {
-    border: 1px solid pink;
     border-radius: 10px;
-    background-color: pink;
+    background-color: rgba(216, 27, 96, 0.5);
+    color: #333366;
     width: 120px;
     height: 40px;
     font-size: 1rem;

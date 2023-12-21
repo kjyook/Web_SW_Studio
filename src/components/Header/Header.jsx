@@ -6,15 +6,17 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import SideBar from "../SideBar";
+import { useRouter } from "next/router";
 
 export const Header = () => {
   const [sidebar, setSidebar] = useState(false);
+  const router = useRouter();
 
   const tabs = [
     { label: "약국소개", path: "drugstore" },
     { label: "질문게시판", path: "Board" },
-    { label: "약품신청", path: "page3" },
-    { label: "약품 재고 확인", path: "page4" },
+    { label: "약품신청", path: "application" },
+    { label: "약품 재고 확인", path: "recommend" },
     { label: "이번달 건강 이슈", path: "HotTopic" },
     // 나머지 탭들도 이와 같은 형식으로 추가...
   ];
@@ -22,7 +24,7 @@ export const Header = () => {
   return (
     <>
       <div className={styles.headerContainer}>
-        <Link href="/">
+        <Link href="/drugstore" className={styles.pharmacyName}>
           <div className={styles.logo}>
             <Image src="/icons/logo-removebg.png" width={75} height={75} alt='logo' />
             <span className={styles.ribbon}>리본</span>
@@ -33,7 +35,7 @@ export const Header = () => {
         <div className={styles.tabButtonContainer}>
           {tabs.map(({ label, path }) => (
             <Link href={`/${path}`} key={path}>
-              <button className={styles.tabButton}>{label}</button>
+              <button className={`${styles.tabButton} ${router.pathname === `/${path}` ? styles.activeTab : ''}`}>{label}</button>
             </Link>
           ))}
         </div>

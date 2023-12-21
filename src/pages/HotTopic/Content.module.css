@@ -1,16 +1,15 @@
 .hot-topic-content {
     margin: 20px;
     padding: 20px;
-    background-color: #f0f8ff;
-    border-radius: 10px;
+    background-color: rgba(216, 27, 96, 0.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     animation: fadeIn 1s ease-in-out;
-    
   }
 
   .mainContent {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
 
@@ -24,7 +23,7 @@
   }
   
   .hot-topic-content h3 {
-    color: #336699;
+    color: black;
     margin-top: 20px;
   }
   
@@ -34,8 +33,11 @@
   }
   
   .hot-topic-content ul {
-    list-style-type: disc;
+    list-style: none;
     margin-left: 20px;
+    @media (max-width: 768px) {
+      list-style-type: disc;
+    }
   }
   
   @keyframes fadeIn {
