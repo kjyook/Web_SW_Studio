@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import Tabs from '@/components/Header/Header'; // 실제 파일 구조에 맞게 경로 조정
 import Footer from '@/components/Footer/Footer';
 import axios from 'axios';
-import useCurrentUser from '@/hooks/useCurrentUser';
 
 const BulletinPage = () => {
   const [bulletin, setBulletin] = useState<{
@@ -18,7 +17,6 @@ const BulletinPage = () => {
 
   const router = useRouter();
   const { id } = router.query;
-  const { data: currentUser } = useCurrentUser();
 
   const [comment, setComment] = useState('');
   const handleCommentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,16 +26,13 @@ const BulletinPage = () => {
   const registerComment = useCallback(async () => {
     let write;
 
-    write = await axios.post('api/comment', {
-      userId: currentUser?.id,
+    write = await axios.post('/api/comment', {
       content: comment,
-      bulletin: {
-        connect: {
-          id: id
-        }
-      }
+      bulletinId: id
     })
-  }, [comment, currentUser?.id, id]);
+
+    setComment('');
+  }, [comment, id]);
 
   useEffect(() => {
     const fetchBulletin = async () => {
@@ -56,7 +51,7 @@ const BulletinPage = () => {
     if (id) {
       fetchBulletin();
     }
-  }, [id]);
+  }, [id, comment]);
 
   const handleDeleteComment = async (commentId: string) => {
     const response = await fetch('/api/comment', {
@@ -89,7 +84,7 @@ const BulletinPage = () => {
           <h2 className={styles.commentsTitle}>댓글</h2>
           <div className={styles.comments}>
             {bulletin.comments && bulletin.comments.map((comment) => (
-              <div key={comment.id} className={styles.comment}>
+              <div key={comment.id} className='w-full flex flex-row justify-between'>
                 <p className={styles.commentContent}>{comment.content}</p>
                 <button
                   onClick={() => handleDeleteComment(comment.id)}

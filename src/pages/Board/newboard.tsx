@@ -21,7 +21,7 @@ const NewBoard = () => {
 
         console.log(title, content);
 
-        write = await axios.post("api/bulletin", {
+        write = await axios.post("/api/bulletin", {
             title: title,
             content: content,
         });
