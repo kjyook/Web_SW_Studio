@@ -35,7 +35,7 @@ const Application = () => {
         event.preventDefault();
 
         const emailData = {
-            senderEmail: user.email,
+            senderEmail: 'dydgus9952@naver.com',
             recipientEmail: 'dydgus9952@naver.com',
             subject: '리본약국 약품 신청서',
             message: JSON.stringify(formData),
