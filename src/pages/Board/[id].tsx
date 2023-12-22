@@ -37,7 +37,7 @@ const BulletinPage = () => {
         }
       }
     })
-  }, [comment]);
+  }, [comment, currentUser?.id, id]);
 
   useEffect(() => {
     const fetchBulletin = async () => {
