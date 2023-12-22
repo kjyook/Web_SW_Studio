@@ -17,7 +17,7 @@ const BulletinList = ({ data, title }: BulletinListProps) => {
                 </div>
                 <div className="pt-10">
                     {data.map((bulletin: any) => (
-                        <BulletinCard data={bulletin} />
+                        <BulletinCard key={bulletin.id} data={bulletin} />
                     ))}
                 </div>
             </div>

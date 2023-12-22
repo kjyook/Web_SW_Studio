@@ -32,7 +32,7 @@ const BulletinPage = () => {
     })
 
     setComment('');
-  }, [comment]);
+  }, [comment, id]);
 
   useEffect(() => {
     const fetchBulletin = async () => {
