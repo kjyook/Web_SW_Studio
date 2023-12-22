@@ -1,10 +1,12 @@
 import React from 'react';
+import Image from 'next/image';
+import logoImage from 'public/logo.jpg';
 import MyCarousel from '@/components/MyCarousel';
-import styles from './index.module.css';
+import styles from './drugstore.module.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
-const MainPage = () => {
+const DrugStore = () => {
   const images = [
     { src: 'store_outdoor_2.png', alt: 'Image 1', caption: 'Caption 1' },
     { src: 'store_indoor_1.png', alt: 'Image 2', caption: 'Caption 2' },
@@ -32,4 +34,4 @@ const MainPage = () => {
     )
 }
 
-export default MainPage;
+export default DrugStore;

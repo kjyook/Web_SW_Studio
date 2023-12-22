@@ -1,0 +1,75 @@
+/* Bulletin.module.css */
+
+/* 게시글 컨테이너 */
+.bulletinContainer {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 게시글 제목 */
+.bulletinTitle {
+  margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 게시글 내용 */
+.bulletinContent {
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* 댓글 목록 컨테이너 */
+.commentsContainer {
+  margin-top: 20px;
+}
+
+/* 댓글 목록 제목 */
+.commentsTitle {
+  color: #336699;
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* 댓글 컨테이너 */
+.comments {
+  margin-top: 10px;
+}
+
+/* 댓글 내용 */
+.commentContent {
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* 댓글 삭제 버튼 */
+.deleteButton {
+  margin-top: 5px;
+  background-color: #ff6666;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+  background-color: #ff3333;
+}
+
+/* 게시판으로 돌아가기 링크 */
+.goBackLink {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #333366;
+  text-decoration: none;
+  font-weight: bold;
+}

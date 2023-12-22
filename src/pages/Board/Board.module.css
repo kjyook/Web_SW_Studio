@@ -1,0 +1,102 @@
+.board {
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bulletinList {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+  }
+  .boardContainer h1 {
+    color: #333366;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  
+  .bulletin {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .bulletin h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .bulletin p {
+    color: #666;
+    font-size: 18px;
+  }
+  
+  .bulletin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .bulletinList {
+      grid-template-columns: 1fr; /* 모바일 화면에서 한 열로 표시 */
+    }
+  
+    .bulletin {
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    .bulletin h2 {
+      font-size: 20px; /* 작은 화면에서 제목 크기 조정 */
+    }
+  
+    .bulletin p {
+      font-size: 16px; /* 작은 화면에서 내용 크기 조정 */
+    }
+  }
+  
+  /* 모바일 화면을 위한 미디어 쿼리 */
+  @media only screen and (max-width: 390px) {
+    .board {
+      padding: 10px;
+    }
+  
+    .bulletinList {
+      padding: 10px;
+    }
+  
+    .bulletin {
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    .bulletin h2 {
+      font-size: 18px; /* 아주 작은 화면에서 제목 크기 조정 */
+    }
+  
+    .bulletin p {
+      font-size: 14px; /* 아주 작은 화면에서 내용 크기 조정 */
+    }
+  }
+  
+  
